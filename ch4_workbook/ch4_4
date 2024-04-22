@@ -1,0 +1,13 @@
+  마우스 이벤트 제어의 콜백 함수 :
+def setMouseCallback(windowName,onMouse,param=None)->None
+windowName : 이벤트 발생을 확인할 윈도우 이름 또는 문자열
+onMouse : 마우스 이벤트를 처리하는 콜백 함수 이름(콜백함수)
+param : 이벤트 처리 함수로 전달할 추가적인 사용자 정의 인수
+
+  트랙바 이벤트 제어의 콜백 함수 :
+cv2.createTrackbar(trackbarname,winname,value count,onChange)->None
+trackbarname : 윈도우에 생성되는 트랙바 이름
+winname : 트랙바의 부모 윈도우 이름(트랙바 이벤트 발생을 체크하는 윈도우)
+value : 트랙바 슬라이더릐 위치를 반영하는 값(정수)
+count : 트랙바 슬라이더의 최댓값, 최솟값은 항상 0
+onChange : 트랙바 슬라이더의 값이 변경될 때 호출되는 콜백 함수
