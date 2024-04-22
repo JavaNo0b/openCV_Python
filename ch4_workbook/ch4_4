@@ -1,3 +1,6 @@
+4. OpenCV이 제공하는, 마우스 이벤트와 트랙바 이벤트를 제어할 콜백함수를 시스템에 등록하는 함수는 각각 무엇이며
+인수가 어떻게 구성되었는지 자세히 설명하시오.
+
   마우스 이벤트 제어의 콜백 함수 :
 def setMouseCallback(windowName,onMouse,param=None)->None
 windowName : 이벤트 발생을 확인할 윈도우 이름 또는 문자열
