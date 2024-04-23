@@ -16,7 +16,7 @@ def onMouse(event, x, y, flags, param):
         if pt[0] < 0: pt = (x, y)
         else:
             dx, dy = pt[0] - x, pt[1] - y       # 두 좌표 간의 거리
-            radius = int(np.sqrt(dx * dx + dy * dy))
+            radius = int(np.sqrt(dx * dx + dy * dy)) # 반지름 구하기
             cv2.circle(image, pt, radius, (0,0,255), 2)
             cv2.imshow(title, image)
             pt = (-1, -1)                       # 시작 좌표 초기화

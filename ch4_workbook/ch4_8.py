@@ -1,8 +1,10 @@
+# 200행, 300열의 행렬 2개를 만들어서 다음과 같이 배치하시오.
+
 import numpy as np
 import cv2
 
-mat1 = np.full((200, 300), 100, np.uint8)
-mat2 = np.full((200, 300), 100, np.uint8)
+mat1 = np.full((200, 300), 0, np.uint8)
+mat2 = np.full((200, 300), 0, np.uint8)
 
 title1 = 'win mode1'
 title2 = 'win mode2'
