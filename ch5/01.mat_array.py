@@ -12,5 +12,5 @@ trans_image = cv2.transpose(image)          # 행렬 전치
 ## 각 행렬을 영상으로 표시
 titles = ['image', 'x_axis', 'y_axis','xy_axis','rep_image','trans_image']
 for title in titles:
-    cv2.imshow(title, eval(title))
+    cv2.imshow(title, eval(title)) # eval: 문자열을 명령으로 만듦– 행렬 변수로 적용
 cv2.waitKey(0)

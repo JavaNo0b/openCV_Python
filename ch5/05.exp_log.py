@@ -1,3 +1,5 @@
+# ????
+
 import numpy as np, cv2
 # numpy array 생성 예시
 v1 = np.array([1, 2, 3], np.float32)          # 1차원 리스트로 생성- 행벡터

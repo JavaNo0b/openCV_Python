@@ -5,6 +5,8 @@ logo  = cv2.imread("images/logo.jpg", cv2.IMREAD_COLOR)         # 로고 영상 
 if image is None or logo is None: raise Exception("영상 파일 읽기 오류 ")
 
 masks = cv2.threshold(logo, 220, 255, cv2.THRESH_BINARY)[1]  # 로고 영상 이진화
+# cv2.threshold() : 이진화 수행 함수, 기준값(220)보다 작은 화소는 0으로 큰 화소는 255로 만든다. 각 채널 별로 이진화를 수행하므로 3채널로 나온다.
+
 masks = cv2.split(masks)
 
 fg_pass_mask = cv2.bitwise_or(masks[0], masks[1])       # 전경 통과 마스크

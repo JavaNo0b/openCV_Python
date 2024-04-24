@@ -44,10 +44,10 @@ def keyEvent(value):
             cv2.destroyAllWindows()
             break
         elif key == 2424832:
-            cv2.setTrackbarPos('Brightness', title, max(value - 1, 0))
+            cv2.setTrackbarPos('Brightness', title, max(value - 10, 0))
             value -= 10
         elif key == 2555904:
-            cv2.setTrackbarPos('Brightness', title, min(value + 1, 255))
+            cv2.setTrackbarPos('Brightness', title, min(value + 10, 255))
             value += 10
 #ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
