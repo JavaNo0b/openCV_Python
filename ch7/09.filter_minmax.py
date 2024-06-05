@@ -1,5 +1,8 @@
 import numpy as np, cv2
 
+# 최댓값,최솟값 필터링
+# 주변의 요소들중 최솟값 또는 최댓값으로 변환
+
 def minmax_filter(image, ksize, mode):
     rows, cols = image.shape[:2]
     dst = np.zeros((rows, cols), np.uint8)
@@ -11,7 +14,7 @@ def minmax_filter(image, ksize, mode):
             y1, y2 = i - center, i + center + 1          # 마스크 높이 범위
             x1, x2 = j - center, j + center + 1          # 마스크 너비 범위
             mask = image[y1:y2, x1:x2]                   # 마스크 영역
-            dst[i, j] = cv2.minMaxLoc(mask)[mode]
+            dst[i, j] = cv2.minMaxLoc(mask)[mode] # minMaxLoc() : (최솟값,최댓값,최솟값 좌표, 최댓값 좌표) 반환 / mode = 0 : 최솟값, 1 : 최댓값
     return dst
 
 image = cv2.imread("images/min_max.jpg", cv2.IMREAD_GRAYSCALE)

@@ -14,7 +14,7 @@ mask8 = np.array(data2, np.int16)
 # OpenCV 함수 cv2.filter2D() 통한 라플라시안 수행
 dst1 = cv2.filter2D(image, cv2.CV_16S, mask4)
 dst2 = cv2.filter2D(image, cv2.CV_16S, mask8)
-dst3 = cv2.Laplacian(image, cv2.CV_16S, 1)      # OpenCV 라플라시안 수행 함수
+dst3 = cv2.Laplacian(image, cv2.CV_16S, 1)  #1 : 3x3    # OpenCV 라플라시안 수행 함수
 
 cv2.imshow("image", image)
 cv2.imshow("filter2D 4-direction", cv2.convertScaleAbs(dst1))

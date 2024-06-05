@@ -1,5 +1,8 @@
 import numpy as np, cv2
 
+# 평균값 필터링
+# 중심화소 포함 주변의 요소들의 평균을 내 그 값으로 변환
+
 def average_filter(image, ksize):
     rows, cols = image.shape[:2]
     dst = np.zeros((rows, cols), np.uint8)
@@ -25,6 +28,6 @@ box_img  = cv2.boxFilter(image, ddepth=-1, ksize=(5, 5))   # OpenCV의 박스 �
 
 cv2.imshow("image", image),
 cv2.imshow("avg_img", avg_img)
-cv2.imshow("blur_img", box_img)
+cv2.imshow("blur_img", blur_img)
 cv2.imshow("box_img", box_img)
 cv2.waitKey(0)
