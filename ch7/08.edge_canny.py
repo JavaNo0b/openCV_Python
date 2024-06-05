@@ -1,6 +1,6 @@
 import numpy as np, cv2
 
-def nonmax_suppression(sobel, direct):
+def nonmax_suppression(sobel, direct): # 비최대치 억제 함수
     rows, cols = sobel.shape[:2]
     dst = np.zeros((rows, cols), np.float32)
     for i in range(1, rows - 1):
@@ -24,7 +24,7 @@ def nonmax_suppression(sobel, direct):
             dst[i, j] = sobel[i, j] if (v1 < sobel[i , j] > v2) else 0
     return dst
 
-def trace(max_sobel, i, j, low):
+def trace(max_sobel, i, j, low): # 에지 추적 함수
     h, w = max_sobel.shape
     if (0 <= i < h and 0 <= j < w) == False: return  # 추적 화소 범위 확인
     if pos_ck[i, j] == 0 and max_sobel[i, j] > low:
@@ -53,6 +53,7 @@ pos_ck = np.zeros(image.shape[:2], np.uint8)
 canny = np.zeros(image.shape[:2], np.uint8)
 
 # 사용자 정의 캐니 에지
+# 가우시안 블러링 -> 화소 기울기 강도와 방향 검출(소벨) -> 비최대치 억제 -> 이력 임계값으로 에지 결정
 gaus_img = cv2.GaussianBlur(image, (5, 5), 0.3)
 Gx = cv2.Sobel(np.float32(gaus_img), cv2.CV_32F, 1, 0, 3)  # x방향 마스크
 Gy = cv2.Sobel(np.float32(gaus_img), cv2.CV_32F, 0, 1, 3)  # y방향 마스크

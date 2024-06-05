@@ -36,6 +36,9 @@ dst4 = time_check(scaling2, image, (300, 400), "[방법2] 반복문 방식>")
 
 cv2.imshow("image", image)
 cv2.imshow("dst1- zoom out", dst1)
+cv2.imshow("dst2- zoom out", dst2)
 cv2.imshow("dst3- zoom out", dst3)
+cv2.imshow("dst4- zoom out", dst4)
 cv2.resizeWindow("dst1- zoom out", 260, 200)  # 윈도우 크기 확장
+cv2.resizeWindow("dst2- zoom out", 260, 200)  # 윈도우 크기 확장
 cv2.waitKey(0)
